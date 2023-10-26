@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LogoTitle from '../../assets/images/logo-s.png'
 import { Link } from 'react-router-dom'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
+import AnimatedLogo from '../AnimatedLogo'
 
 const Home = () => {
     const [letterClass, setLetterClass ] = useState('text-animate')
     const nameArray = ['h', 'a', 'r', 'l', 'i', 'e']
     const jobArray = ['w', 'e', 'b', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r', '.']
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLetterClass('text-animate-hover')
+        }, 4000)
+    }, [])
 
 
     return (
@@ -27,6 +34,7 @@ const Home = () => {
                 <h2>FullStack Developer: Ruby on Rails Expert</h2>
                 <Link to='/contact' className='flat-button' >Contact Me</Link>
             </div>
+            <AnimatedLogo />
         </div>
     )
 }

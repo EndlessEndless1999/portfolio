@@ -1,6 +1,6 @@
 import './App.scss'
 import { Routes, Route } from 'react-router-dom';
-import { Layout, Home } from './components';
+import { Layout, Home, About } from './components';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
     <Routes>
       <Route path='' element={<Layout />}>
         <Route index element={<Home />}/>
+        <Route path='/about' element={<About />}/>
       </Route >
     </Routes>
     </>
